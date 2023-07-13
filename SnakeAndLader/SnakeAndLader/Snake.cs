@@ -8,20 +8,33 @@ namespace SnakeAndLader
 {
     internal class Snake
     {
+        const int NO_PLAY = 0, LADDER = 1, SNAKE = 2;
 
-        //uc1
         int position = 0;
         Random random = new Random();
-
-        //uc2
-        public void DieRoll()
+        public int DieRoll()
         {
             int diePosition = random.Next(1, 7);
             Console.WriteLine("Die POsition is" + diePosition);
+            return diePosition;
         }
-
+        //uc3
+        public void Game()
+        {
+            int option = random.Next(0, 3);
+            int dice = DieRoll();
+            switch (option)
+            {
+                case NO_PLAY:
+                    break;
+                case LADDER:
+                    this.position += dice;
+                    break;
+                case SNAKE:
+                    this.position -= dice;
+                    break;
+            }
+        }
 
     }
 }
-
-       
