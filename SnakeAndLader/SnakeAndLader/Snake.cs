@@ -44,13 +44,13 @@ namespace SnakeAndLader
         public int DieRoll()
         {
             int diePosition = random.Next(1, 7);
-            //Console.WriteLine(this.position);
+           
             this.count++;
             return diePosition;
         }
         public int PlayGame()
         {
-            //while (this.position < WINNING_POSITION) {
+           
             
             int option = random.Next(0, 3);
 
